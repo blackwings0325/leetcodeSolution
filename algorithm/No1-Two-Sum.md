@@ -12,26 +12,26 @@ return [0, 1].
 ## C-Solution:
 
 
-int* twoSum(int* nums, int numsSize, int target) {
-    int i, j;
-    int flag;
-    int *result;
-    result = (int*)malloc(2*sizeof(int));
-    for(i=0;i<numsSize;i++)
-    {
-        flag=0;
-        result[0]=i;
-        for(j=i+1;j<numsSize;j++)
-        {
-            if(nums[i]+nums[j]==target)
-            {
-                flag=1;
-                result[1]=j;
-                break;
-            }
-        }
-        if(flag==1)
-            break;
-    }
-    return result;
-}
+int* twoSum(int* nums, int numsSize, int target) {  
+    int i, j;  
+    int flag;  
+    int *result;  
+    result = (int*)malloc(2*sizeof(int));  
+    for(i=0;i<numsSize;i++)  
+    {  
+        flag=0;  
+        result[0]=i;  
+        for(j=i+1;j<numsSize;j++)  
+        {  
+            if(nums[i]+nums[j]==target)  
+            {  
+                flag=1;  
+                result[1]=j;  
+                break;  
+            }  
+        }  
+        if(flag==1)  
+            break;  
+    }  
+    return result;  
+}  
