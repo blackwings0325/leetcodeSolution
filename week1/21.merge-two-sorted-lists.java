@@ -37,27 +37,13 @@ class Solution {
         if(l2 == null){
             return l1;
         }
-        ListNode temp1 = l1;
-        ListNode temp2 = l2;
-        ListNode res;
-        if(temp1.val < temp2.val){
-            res = new ListNode(temp1.val);
-            temp1 = temp1.next;
+        if(l1.val < l2.val){
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
         }else{
-            res = new ListNode(temp2.val);
-            temp2 = temp2.next;
+            l2.next =  mergeTwoLists(l1, l2.next);
+            return l2;
         }
-        while(temp1 != null || temp2 != null){
-            if(temp1 == null || temp1.val > temp2.val){
-                res.next = new ListNode(temp2.val);
-                temp2 = temp2.next;
-            }
-            if(temp2 == null || temp2.val > temp1.val){
-                res.next = new ListNode(temp1.val);
-                temp1 = temp1.next;
-            }
-        }
-        return res;
     }
 }
 
